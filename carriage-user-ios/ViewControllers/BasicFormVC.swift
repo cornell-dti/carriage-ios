@@ -41,5 +41,26 @@ class BasicFormVC: UIViewController {
         setUpConstraints()
 
     }
+    
+    func setUpConstraints() {
+        NSLayoutConstraint.activate([
+            nameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            nameLabel.heightAnchor.constraint(equalToConstant: 40),
+            nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            nameLabel.widthAnchor.constraint(equalToConstant: 150)
+            ]);
+        NSLayoutConstraint.activate([
+            timePickupLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 50),
+            timePickupLabel.heightAnchor.constraint(equalToConstant: 40),
+            timePickupLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            timePickupLabel.widthAnchor.constraint(equalToConstant: 150)
+            ]);
+        NSLayoutConstraint.activate([
+            finalDestLabel.topAnchor.constraint(equalTo: timePickupLabel.bottomAnchor, constant: 50),
+            finalDestLabel.heightAnchor.constraint(equalToConstant: 40),
+            finalDestLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            finalDestLabel.widthAnchor.constraint(equalToConstant: 150)
+            ]);
+    }
 
 }
