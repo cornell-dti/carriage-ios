@@ -1,5 +1,6 @@
 # carriage-ios
 Carriage iOS app for CULift riders 
 
-Collaborators:
+Contributors:
+Kinjal Jasani
 Elizabeth Mieczkowski
