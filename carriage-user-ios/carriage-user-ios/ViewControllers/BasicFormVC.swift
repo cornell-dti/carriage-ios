@@ -2,8 +2,6 @@
 //  BasicFormVC.swift
 //  carriage-user-ios
 //
-//  Created by Beth Mieczkowski on 10/22/19.
-//  Copyright © 2019 Beth Mieczkowski. All rights reserved.
 //
 
 import UIKit

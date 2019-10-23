@@ -11,7 +11,6 @@
 		D3BE091F235FAC2C00005FBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3BE091D235FAC2C00005FBE /* Main.storyboard */; };
 		D3BE0921235FAC3200005FBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BE0920235FAC3200005FBE /* Assets.xcassets */; };
 		D3BE0924235FAC3200005FBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3BE0922235FAC3200005FBE /* LaunchScreen.storyboard */; };
-		D3BE0931235FB3D100005FBE /* BasicFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BE0930235FB3D100005FBE /* BasicFormVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +20,6 @@
 		D3BE0920235FAC3200005FBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3BE0923235FAC3200005FBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3BE0925235FAC3200005FBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D3BE0930235FB3D100005FBE /* BasicFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BasicFormVC.swift; path = ViewControllers/BasicFormVC.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +75,6 @@
 		D3BE092C235FAC6C00005FBE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D3BE0930235FB3D100005FBE /* BasicFormVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -168,7 +165,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3BE091A235FAC2C00005FBE /* AppDelegate.swift in Sources */,
-				D3BE0931235FB3D100005FBE /* BasicFormVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
