@@ -9,10 +9,11 @@ If you have a disability that prevents you from walking around campus, getting a
  
 The **Android user** branch can be found [here](https://github.com/cornell-dti/carriage-android). The **Driver App** branch can be found [here](https://github.com/cornell-dti/carriage-driver). The **Dispatcher and Backend Code** branch can be found [here](https://github.com/cornell-dti/carriage-web). 
  
+ 
 ## Contributors: 
 **Current Contributors**
-* Sam Steinberg - Product Manager
 * Nina Xie - Product Manager
+* Sam Steinberg - Product Manager
 * Laura Sizemore - Technical Project Manager
 * Kinjal Jasani - Software Developer
 * Elizabeth Mieczkowski - Software Developer
