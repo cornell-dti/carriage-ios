@@ -9,19 +9,23 @@ import SnapKit
 
 class UserInputForm: UIViewController {
     
+    //Background colors and boxes
     var whiteBox1: UILabel!
     var whiteBox2: UILabel!
     var whiteBox3: UILabel!
     var whiteBox4: UILabel!
     
+    //Elements under "Your Profile"
     var yourProfileLabel: UILabel!
     var nameLabel: UILabel!
     var joinedLabel: UILabel!
     
+    //Elements under "Account Info"
     var accountInfoLabel: UILabel!
     var emailLabel: UILabel!
     var phoneLabel: UILabel!
     
+    //Elements under "Personal Info"
     var personalInfoLabel: UILabel!
     var pronounsLabel: UILabel!
     var accessLabel: UILabel!
@@ -35,69 +39,9 @@ class UserInputForm: UIViewController {
         self.view.backgroundColor = UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
     
         createBackground()
-        
-        yourProfileLabel = UILabel()
-        yourProfileLabel.translatesAutoresizingMaskIntoConstraints = false
-        yourProfileLabel.text = "Your Profile"
-        yourProfileLabel.textColor = .black
-        yourProfileLabel.font = UIFont(name: "SFProDisplay-Bold", size: 34)
-        self.view.addSubview(yourProfileLabel)
-        
-        nameLabel = UILabel()
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.text = "Aiden Kim" //TODO: make name from user
-        nameLabel.textColor = .black
-        nameLabel.font = UIFont(name: "SFProDisplay-Bold", size: 22)
-        self.view.addSubview(nameLabel)
-        
-        joinedLabel = UILabel()
-        joinedLabel.translatesAutoresizingMaskIntoConstraints = false
-        joinedLabel.text = "Joined 06/2019" //TODO: make date from user
-        joinedLabel.textColor = UIColor(red: 0.60784, green: 0.60784, blue: 0.60784, alpha: 1.0)
-        joinedLabel.font = UIFont(name: "SFProDisplay-Bold", size: 14)
-        self.view.addSubview(joinedLabel)
-        
-        accountInfoLabel = UILabel()
-        accountInfoLabel.translatesAutoresizingMaskIntoConstraints = false
-        accountInfoLabel.text = "Account Info"
-        accountInfoLabel.textColor = .black
-        accountInfoLabel.font = UIFont(name: "SFProDisplay-Semibold", size: 20)
-        self.view.addSubview(accountInfoLabel)
-        
-        emailLabel = UILabel()
-        emailLabel.translatesAutoresizingMaskIntoConstraints = false
-        emailLabel.text = "yk568@cornell.edu" //TODO: make phone from user
-        emailLabel.textColor = UIColor(red: 0.2902, green: 0.2902, blue: 0.2902, alpha: 1.0)
-        emailLabel.font = UIFont(name: "SFProText-Regular", size: 16)
-        self.view.addSubview(emailLabel)
-        
-        phoneLabel = UILabel()
-        phoneLabel.translatesAutoresizingMaskIntoConstraints = false
-        phoneLabel.text = "+1 657-500-1311" //TODO: make phone from user
-        phoneLabel.textColor = UIColor(red: 0.2902, green: 0.2902, blue: 0.2902, alpha: 1.0)
-        phoneLabel.font = UIFont(name: "SFProText-Regular", size: 16)
-        self.view.addSubview(phoneLabel)
-        
-        personalInfoLabel = UILabel()
-        personalInfoLabel.translatesAutoresizingMaskIntoConstraints = false
-        personalInfoLabel.text = "Personal Info"
-        personalInfoLabel.textColor = .black
-        personalInfoLabel.font = UIFont(name: "SFProDisplay-Semibold", size: 20)
-        self.view.addSubview(personalInfoLabel)
-        
-        pronounsLabel = UILabel()
-        pronounsLabel.translatesAutoresizingMaskIntoConstraints = false
-        pronounsLabel.text = "He/Him/His" //TODO: make pronouns from user
-        pronounsLabel.textColor = UIColor(red: 0.2902, green: 0.2902, blue: 0.2902, alpha: 1.0)
-        pronounsLabel.font = UIFont(name: "SFProText-Regular", size: 16)
-        self.view.addSubview(pronounsLabel)
-        
-        accessLabel = UILabel()
-        accessLabel.translatesAutoresizingMaskIntoConstraints = false
-        accessLabel.text = "Accessibility"
-        accessLabel.textColor = UIColor(red: 0.2902, green: 0.2902, blue: 0.2902, alpha: 1.0)
-        accessLabel.font = UIFont(name: "SFProText-Regular", size: 16)
-        self.view.addSubview(accessLabel)
+        createProfileSection()
+        createAccountInfoSection()
+        createPersonalInfoSection()
         
         setUpConstraints()
         
@@ -125,6 +69,78 @@ class UserInputForm: UIViewController {
         whiteBox4.backgroundColor = .white
         self.view.addSubview(whiteBox4)
         
+    }
+    
+    func createProfileSection() {
+        
+        yourProfileLabel = UILabel()
+        yourProfileLabel.translatesAutoresizingMaskIntoConstraints = false
+        yourProfileLabel.text = "Your Profile"
+        yourProfileLabel.textColor = .black
+        yourProfileLabel.font = UIFont(name: "SFProDisplay-Bold", size: 34)
+        self.view.addSubview(yourProfileLabel)
+        
+        nameLabel = UILabel()
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.text = "Aiden Kim" //TODO: make name from user
+        nameLabel.textColor = .black
+        nameLabel.font = UIFont(name: "SFProDisplay-Bold", size: 22)
+        self.view.addSubview(nameLabel)
+        
+        joinedLabel = UILabel()
+        joinedLabel.translatesAutoresizingMaskIntoConstraints = false
+        joinedLabel.text = "Joined 06/2019" //TODO: make date from user
+        joinedLabel.textColor = UIColor(red: 0.60784, green: 0.60784, blue: 0.60784, alpha: 1.0)
+        joinedLabel.font = UIFont(name: "SFProDisplay-Bold", size: 14)
+        self.view.addSubview(joinedLabel)
+    }
+    
+    func createAccountInfoSection() {
+        
+        accountInfoLabel = UILabel()
+        accountInfoLabel.translatesAutoresizingMaskIntoConstraints = false
+        accountInfoLabel.text = "Account Info"
+        accountInfoLabel.textColor = .black
+        accountInfoLabel.font = UIFont(name: "SFProDisplay-Semibold", size: 20)
+        self.view.addSubview(accountInfoLabel)
+        
+        emailLabel = UILabel()
+        emailLabel.translatesAutoresizingMaskIntoConstraints = false
+        emailLabel.text = "yk568@cornell.edu" //TODO: make phone from user
+        emailLabel.textColor = UIColor(red: 0.2902, green: 0.2902, blue: 0.2902, alpha: 1.0)
+        emailLabel.font = UIFont(name: "SFProText-Regular", size: 16)
+        self.view.addSubview(emailLabel)
+        
+        phoneLabel = UILabel()
+        phoneLabel.translatesAutoresizingMaskIntoConstraints = false
+        phoneLabel.text = "+1 657-500-1311" //TODO: make phone from user
+        phoneLabel.textColor = UIColor(red: 0.2902, green: 0.2902, blue: 0.2902, alpha: 1.0)
+        phoneLabel.font = UIFont(name: "SFProText-Regular", size: 16)
+        self.view.addSubview(phoneLabel)
+    }
+    
+    func createPersonalInfoSection() {
+        
+        personalInfoLabel = UILabel()
+        personalInfoLabel.translatesAutoresizingMaskIntoConstraints = false
+        personalInfoLabel.text = "Personal Info"
+        personalInfoLabel.textColor = .black
+        personalInfoLabel.font = UIFont(name: "SFProDisplay-Semibold", size: 20)
+        self.view.addSubview(personalInfoLabel)
+        
+        pronounsLabel = UILabel()
+        pronounsLabel.translatesAutoresizingMaskIntoConstraints = false
+        pronounsLabel.text = "He/Him/His" //TODO: make pronouns from user
+        pronounsLabel.textColor = UIColor(red: 0.2902, green: 0.2902, blue: 0.2902, alpha: 1.0)
+        pronounsLabel.font = UIFont(name: "SFProText-Regular", size: 16)
+        self.view.addSubview(pronounsLabel)
+        
+        accessLabel = UILabel()
+        accessLabel.translatesAutoresizingMaskIntoConstraints = false
+        accessLabel.text = "Accessibility"
+        accessLabel.textColor = UIColor(red: 0.2902, green: 0.2902, blue: 0.2902, alpha: 1.0)
+        accessLabel.font = UIFont(name: "SFProText-Regular", size: 16)
+        self.view.addSubview(accessLabel)
     }
     
     func setUpConstraints() {
