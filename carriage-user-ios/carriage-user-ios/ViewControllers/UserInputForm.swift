@@ -49,7 +49,7 @@ class UserInputForm: UIViewController {
     var accessIcon: UIImageView!
     var accessRightChevronButton: UIButton!
     
-    var newUser: UserInputModel!
+    var newUser: ProfileModel!
     
     let backgroundGray: UIColor = UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
     
