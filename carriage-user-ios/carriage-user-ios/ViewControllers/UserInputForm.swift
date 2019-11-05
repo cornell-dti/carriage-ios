@@ -19,24 +19,47 @@ class UserInputForm: UIViewController {
     var yourProfileLabel: UILabel!
     var nameLabel: UILabel!
     var joinedLabel: UILabel!
+    var profileImage: UIImageView!
+    
+    var changeProfileImageButton: UIButton!
+    var changeNameButton: UIButton!
     
     //Elements under "Account Info"
     var accountInfoLabel: UILabel!
+    var lineBreak1: UILabel!
+    
     var emailLabel: UILabel!
+    var emailIcon: UIImageView!
+    var emailRightChevronButton: UIButton!
+    var emailVerifiedLabel: UILabel!
+    
     var phoneLabel: UILabel!
+    var phoneIcon: UIImageView!
+    var phoneRightChevronButton: UIButton!
+    var phoneVerifiedLabel: UILabel!
     
     //Elements under "Personal Info"
     var personalInfoLabel: UILabel!
+    
     var pronounsLabel: UILabel!
+    var pronounsIcon: UIImageView!
+    var pronounsRightChevronButton: UIButton!
+    
     var accessLabel: UILabel!
+    var accessIcon: UIImageView!
+    var accessRightChevronButton: UIButton!
     
     var newUser: UserInputModel!
+    
+    let backgroundGray: UIColor = UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.barTintColor =  UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
-        self.view.backgroundColor = UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.barTintColor =  backgroundGray
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< Schedule", style: .done, target: self, action: #selector(returnToSchedule))
+        self.view.backgroundColor = backgroundGray
     
         createBackground()
         createProfileSection()
@@ -93,6 +116,29 @@ class UserInputForm: UIViewController {
         joinedLabel.textColor = UIColor(red: 0.60784, green: 0.60784, blue: 0.60784, alpha: 1.0)
         joinedLabel.font = UIFont(name: "SFProDisplay-Bold", size: 14)
         self.view.addSubview(joinedLabel)
+        
+        profileImage = UIImageView()
+        profileImage.translatesAutoresizingMaskIntoConstraints = false
+        profileImage.image = UIImage(named: "stockphoto")
+        profileImage.layer.cornerRadius = 50
+        profileImage.contentMode = .scaleAspectFit
+        self.view.addSubview(profileImage)
+        
+        changeProfileImageButton = UIButton()
+        changeProfileImageButton.translatesAutoresizingMaskIntoConstraints = false
+        changeProfileImageButton.backgroundColor = .black
+        changeProfileImageButton.layer.cornerRadius = 20
+        changeProfileImageButton.setImage(UIImage(named: "pencil"), for: .normal) //TODO: fix this image
+        changeProfileImageButton.imageView?.contentMode = .scaleToFill
+        changeProfileImageButton.imageView?.layer.cornerRadius = 20
+        self.view.addSubview(changeProfileImageButton)
+        
+        changeNameButton = UIButton()
+        changeNameButton.translatesAutoresizingMaskIntoConstraints = false
+        changeNameButton.setImage(UIImage(named: "pencilonpaper"), for: .normal) //TODO: fix this image
+        changeNameButton.imageView?.contentMode = .scaleToFill
+        self.view.addSubview(changeNameButton)
+        
     }
     
     func createAccountInfoSection() {
@@ -111,12 +157,53 @@ class UserInputForm: UIViewController {
         emailLabel.font = UIFont(name: "SFProText-Regular", size: 16)
         self.view.addSubview(emailLabel)
         
+        emailIcon = UIImageView()
+        emailIcon.translatesAutoresizingMaskIntoConstraints = false
+        emailIcon.image = UIImage(named: "mail")
+        emailIcon.contentMode = .scaleAspectFill
+        self.view.addSubview(emailIcon)
+        
+        emailRightChevronButton = UIButton()
+        emailRightChevronButton.translatesAutoresizingMaskIntoConstraints = false
+        emailRightChevronButton.setImage(UIImage(named: "chevron-right"), for: .normal)
+        self.view.addSubview(emailRightChevronButton)
+        
+        emailVerifiedLabel = UILabel()
+        emailVerifiedLabel.translatesAutoresizingMaskIntoConstraints = false
+        emailVerifiedLabel.text = "verified" //TODO: make only appear if verified
+        emailVerifiedLabel.textColor = UIColor(red: 0.29804, green: 0.68627, blue: 0.31372, alpha: 1.0)
+        emailVerifiedLabel.font = UIFont(name: "SFProText-Regular", size: 14)
+        self.view.addSubview(emailVerifiedLabel)
+        
+        lineBreak1 = UILabel()
+        lineBreak1.translatesAutoresizingMaskIntoConstraints = false
+        lineBreak1.backgroundColor = backgroundGray
+        self.view.addSubview(lineBreak1)
+        
         phoneLabel = UILabel()
         phoneLabel.translatesAutoresizingMaskIntoConstraints = false
         phoneLabel.text = "+1 657-500-1311" //TODO: make phone from user
         phoneLabel.textColor = UIColor(red: 0.2902, green: 0.2902, blue: 0.2902, alpha: 1.0)
         phoneLabel.font = UIFont(name: "SFProText-Regular", size: 16)
         self.view.addSubview(phoneLabel)
+        
+        phoneIcon = UIImageView()
+        phoneIcon.translatesAutoresizingMaskIntoConstraints = false
+        phoneIcon.image = UIImage(named: "phone")
+        phoneIcon.contentMode = .scaleAspectFill
+        self.view.addSubview(phoneIcon)
+        
+        phoneRightChevronButton = UIButton()
+        phoneRightChevronButton.translatesAutoresizingMaskIntoConstraints = false
+        phoneRightChevronButton.setImage(UIImage(named: "chevron-right"), for: .normal)
+        self.view.addSubview(phoneRightChevronButton)
+        
+        phoneVerifiedLabel = UILabel()
+        phoneVerifiedLabel.translatesAutoresizingMaskIntoConstraints = false
+        phoneVerifiedLabel.text = "verified" //TODO: make only appear if verified
+        phoneVerifiedLabel.textColor = UIColor(red: 0.29804, green: 0.68627, blue: 0.31372, alpha: 1.0)
+        phoneVerifiedLabel.font = UIFont(name: "SFProText-Regular", size: 14)
+        self.view.addSubview(phoneVerifiedLabel)
     }
     
     func createPersonalInfoSection() {
@@ -135,12 +222,34 @@ class UserInputForm: UIViewController {
         pronounsLabel.font = UIFont(name: "SFProText-Regular", size: 16)
         self.view.addSubview(pronounsLabel)
         
+        pronounsIcon = UIImageView()
+        pronounsIcon.translatesAutoresizingMaskIntoConstraints = false
+        pronounsIcon.contentMode = .scaleToFill
+        pronounsIcon.image = UIImage(named: "user")
+        self.view.addSubview(pronounsIcon)
+        
+        pronounsRightChevronButton = UIButton()
+        pronounsRightChevronButton.translatesAutoresizingMaskIntoConstraints = false
+        pronounsRightChevronButton.setImage(UIImage(named: "chevron-right"), for: .normal)
+        self.view.addSubview(pronounsRightChevronButton)
+        
         accessLabel = UILabel()
         accessLabel.translatesAutoresizingMaskIntoConstraints = false
         accessLabel.text = "Accessibility"
         accessLabel.textColor = UIColor(red: 0.2902, green: 0.2902, blue: 0.2902, alpha: 1.0)
         accessLabel.font = UIFont(name: "SFProText-Regular", size: 16)
         self.view.addSubview(accessLabel)
+        
+        accessIcon = UIImageView()
+        accessIcon.translatesAutoresizingMaskIntoConstraints = false
+        accessIcon.image = UIImage(named: "wheelchair")
+        accessIcon.contentMode = .scaleAspectFill
+        self.view.addSubview(accessIcon)
+        
+        accessRightChevronButton = UIButton()
+        accessRightChevronButton.translatesAutoresizingMaskIntoConstraints = false
+        accessRightChevronButton.setImage(UIImage(named: "chevron-right"), for: .normal)
+        self.view.addSubview(accessRightChevronButton)
     }
     
     func setUpConstraints() {
@@ -194,6 +303,27 @@ class UserInputForm: UIViewController {
             make.width.equalTo(104)
         }
         
+        profileImage.snp.makeConstraints { (make) -> Void in
+            make.leading.equalTo(16)
+            make.top.equalTo(whiteBox1).offset(24)
+            make.height.equalTo(100)
+            make.width.equalTo(100)
+        }
+        
+        changeProfileImageButton.snp.makeConstraints { (make) -> Void in
+            make.trailing.equalTo(profileImage)
+            make.top.equalTo(profileImage).offset(66)
+            make.height.equalTo(39)
+            make.width.equalTo(39)
+        }
+        
+        changeNameButton.snp.makeConstraints { (make) -> Void in
+            make.leading.equalTo(nameLabel.snp_trailingMargin).offset(12)
+            make.centerY.equalTo(nameLabel)
+            make.height.equalTo(15)
+            make.width.equalTo(15)
+        }
+        
         accountInfoLabel.snp.makeConstraints { (make) -> Void in
             make.leading.equalTo(16)
             make.top.equalTo(whiteBox2).offset(24)
@@ -208,11 +338,60 @@ class UserInputForm: UIViewController {
             make.width.equalTo(150)
         }
         
+        emailIcon.snp.makeConstraints { (make) -> Void in
+            make.leading.equalTo(17)
+            make.top.equalTo(emailLabel)
+            make.height.equalTo(25)
+            make.width.equalTo(24)
+        }
+        
+        emailRightChevronButton.snp.makeConstraints { (make) -> Void in
+            make.trailing.equalTo(-24)
+            make.top.equalTo(emailLabel)
+            make.height.equalTo(25)
+            make.width.equalTo(24)
+        }
+        
+        emailVerifiedLabel.snp.makeConstraints { (make) -> Void in
+            make.leading.equalTo(emailLabel.snp_trailingMargin).offset(8)
+            make.top.equalTo(emailLabel)
+            make.height.equalTo(emailLabel)
+            make.width.equalTo(51)
+        }
+        
+        lineBreak1.snp.makeConstraints{ (make) -> Void in
+            make.leading.equalTo(56)
+            make.trailing.equalTo(-16)
+            make.height.equalTo(5)
+            make.top.equalTo(emailLabel.snp_bottomMargin).offset(18)
+        }
+        
         phoneLabel.snp.makeConstraints { (make) -> Void in
             make.leading.equalTo(56)
-            make.top.equalTo(emailLabel).offset(56)
+            make.top.equalTo(emailLabel).offset(55)
             make.height.equalTo(19)
-            make.width.equalTo(150)
+            make.width.equalTo(135)
+        }
+        
+        phoneIcon.snp.makeConstraints { (make) -> Void in
+            make.leading.equalTo(17)
+            make.top.equalTo(phoneLabel)
+            make.height.equalTo(25)
+            make.width.equalTo(24)
+        }
+        
+        phoneRightChevronButton.snp.makeConstraints { (make) -> Void in
+            make.trailing.equalTo(-24)
+            make.top.equalTo(phoneLabel)
+            make.height.equalTo(25)
+            make.width.equalTo(24)
+        }
+        
+        phoneVerifiedLabel.snp.makeConstraints { (make) -> Void in
+            make.leading.equalTo(phoneLabel.snp_trailingMargin).offset(8)
+            make.top.equalTo(phoneLabel)
+            make.height.equalTo(phoneLabel)
+            make.width.equalTo(51)
         }
         
         personalInfoLabel.snp.makeConstraints { (make) -> Void in
@@ -229,13 +408,45 @@ class UserInputForm: UIViewController {
             make.width.equalTo(150)
         }
         
+        pronounsIcon.snp.makeConstraints { (make) -> Void in
+            make.leading.equalTo(19)
+            make.top.equalTo(pronounsLabel)
+            make.height.equalTo(25)
+            make.width.equalTo(24)
+        }
+        
+        pronounsRightChevronButton.snp.makeConstraints { (make) -> Void in
+            make.trailing.equalTo(-24)
+            make.top.equalTo(pronounsLabel)
+            make.height.equalTo(25)
+            make.width.equalTo(24)
+        }
+        
         accessLabel.snp.makeConstraints { (make) -> Void in
             make.leading.equalTo(56)
-            make.top.equalTo(pronounsLabel).offset(56)
+            make.top.equalTo(pronounsLabel).offset(55)
             make.height.equalTo(19)
             make.width.equalTo(150)
         }
         
+        accessIcon.snp.makeConstraints { (make) -> Void in
+            make.leading.equalTo(16)
+            make.top.equalTo(accessLabel)
+            make.height.equalTo(25)
+            make.width.equalTo(24)
+        }
+        
+        accessRightChevronButton.snp.makeConstraints { (make) -> Void in
+            make.trailing.equalTo(-24)
+            make.top.equalTo(accessLabel)
+            make.height.equalTo(25)
+            make.width.equalTo(24)
+        }
+        
+    }
+    
+    @objc func returnToSchedule() {
+        //TODO
     }
     
 }
