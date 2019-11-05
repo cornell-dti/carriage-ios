@@ -4,7 +4,4 @@
    <FileRef
       location = "group:carriage-user-ios.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
 </Workspace>
