@@ -12,6 +12,9 @@
 		D3B5364E2368E72B001B76E4 /* UserInputForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B5364D2368E72B001B76E4 /* UserInputForm.swift */; };
 		D3BE091A235FAC2C00005FBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BE0919235FAC2C00005FBE /* AppDelegate.swift */; };
 		D3BE0921235FAC3200005FBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BE0920235FAC3200005FBE /* Assets.xcassets */; };
+		D3EF558223720DB6002EDAC2 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D3EF558123720DB6002EDAC2 /* SF-Pro-Display-Bold.otf */; };
+		D3EF558423721AA1002EDAC2 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D3EF558323721AA1002EDAC2 /* SF-Pro-Display-Semibold.otf */; };
+		D3EF558623721B97002EDAC2 /* FontsFree-Net-SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3EF558523721B97002EDAC2 /* FontsFree-Net-SFProText-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		D3BE0919235FAC2C00005FBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3BE0920235FAC3200005FBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3BE0925235FAC3200005FBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3EF558123720DB6002EDAC2 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Bold.otf"; path = "../../San-Francisco-Pro-Fonts-master/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
+		D3EF558323721AA1002EDAC2 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../San-Francisco-Pro-Fonts-master/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
+		D3EF558523721B97002EDAC2 /* FontsFree-Net-SFProText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FontsFree-Net-SFProText-Regular.ttf"; path = "../../../Downloads/FontsFree-Net-SFProText-Regular.ttf"; sourceTree = "<group>"; };
 		FB0A8F20DA6BFD87957A049A /* Pods-carriage-user-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carriage-user-ios.release.xcconfig"; path = "Target Support Files/Pods-carriage-user-ios/Pods-carriage-user-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +82,7 @@
 		D3BE0918235FAC2C00005FBE /* carriage-user-ios */ = {
 			isa = PBXGroup;
 			children = (
+				D3EF558023720D8C002EDAC2 /* Resources */,
 				D3BE092F235FACC600005FBE /* Cells */,
 				D3BE092D235FAC8500005FBE /* Views */,
 				D3BE092C235FAC6C00005FBE /* ViewControllers */,
@@ -115,6 +122,17 @@
 			children = (
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		D3EF558023720D8C002EDAC2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D3EF558323721AA1002EDAC2 /* SF-Pro-Display-Semibold.otf */,
+				D3EF558523721B97002EDAC2 /* FontsFree-Net-SFProText-Regular.ttf */,
+				D3EF558123720DB6002EDAC2 /* SF-Pro-Display-Bold.otf */,
+			);
+			name = Resources;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +195,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3EF558423721AA1002EDAC2 /* SF-Pro-Display-Semibold.otf in Resources */,
+				D3EF558223720DB6002EDAC2 /* SF-Pro-Display-Bold.otf in Resources */,
+				D3EF558623721B97002EDAC2 /* FontsFree-Net-SFProText-Regular.ttf in Resources */,
 				D3BE0921235FAC3200005FBE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

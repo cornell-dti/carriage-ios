@@ -32,6 +32,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SF-Pro-Display-Bold.otf</string>
+		<string>SF-Pro-Display-Semibold.otf</string>
+		<string>FontsFree-Net-SFProText-Regular.ttf</string>
+	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
