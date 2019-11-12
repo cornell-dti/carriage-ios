@@ -8,6 +8,7 @@ target 'carriage-user-ios' do
   # Pods for carriage-user-ios
 
     pod 'SnapKit', '~> 4.2.0'
+    pod 'GoogleSignIn'
 
 
 end
