@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		4A291D829021CB4F3EEC429B /* Pods_carriage_user_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3BDDEA9F644A5887A09E88 /* Pods_carriage_user_ios.framework */; };
+		66593BBD237225D300B7A56B /* San-Francisco-Pro-Fonts-master in Resources */ = {isa = PBXBuildFile; fileRef = 66593BBC237225D300B7A56B /* San-Francisco-Pro-Fonts-master */; };
+		66593BC02372367600B7A56B /* UpcomingRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66593BBF2372367600B7A56B /* UpcomingRidesCell.swift */; };
+		66593BC2237A656000B7A56B /* upcomingRidesObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66593BC1237A656000B7A56B /* upcomingRidesObject.swift */; };
 		66AAC9B223713A15000A36B0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AAC9B123713A15000A36B0 /* HomeViewController.swift */; };
 		D3BE091A235FAC2C00005FBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BE0919235FAC2C00005FBE /* AppDelegate.swift */; };
 		D3BE0921235FAC3200005FBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BE0920235FAC3200005FBE /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		66593BBC237225D300B7A56B /* San-Francisco-Pro-Fonts-master */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "San-Francisco-Pro-Fonts-master"; sourceTree = "<group>"; };
+		66593BBF2372367600B7A56B /* UpcomingRidesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UpcomingRidesCell.swift; path = "carriage-user-ios/UpcomingRidesCell.swift"; sourceTree = SOURCE_ROOT; };
+		66593BC1237A656000B7A56B /* upcomingRidesObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = upcomingRidesObject.swift; path = "carriage-user-ios/upcomingRidesObject.swift"; sourceTree = SOURCE_ROOT; };
 		66AAC9B123713A15000A36B0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "carriage-user-ios/HomeViewController.swift"; sourceTree = SOURCE_ROOT; };
 		BD3BDDEA9F644A5887A09E88 /* Pods_carriage_user_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carriage_user_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BE0916235FAC2C00005FBE /* carriage-user-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "carriage-user-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66593BBE237225E700B7A56B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				66593BBC237225D300B7A56B /* San-Francisco-Pro-Fonts-master */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A0523E56FA3E2B3FCDA3A0D4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +88,7 @@
 		D3BE0918235FAC2C00005FBE /* carriage-user-ios */ = {
 			isa = PBXGroup;
 			children = (
+				66593BBE237225E700B7A56B /* Resources */,
 				D3BE092F235FACC600005FBE /* Cells */,
 				D3BE092D235FAC8500005FBE /* Views */,
 				D3BE092C235FAC6C00005FBE /* ViewControllers */,
@@ -88,6 +103,7 @@
 		D3BE092B235FAC6500005FBE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				66593BC1237A656000B7A56B /* upcomingRidesObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -110,6 +126,7 @@
 		D3BE092F235FACC600005FBE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				66593BBF2372367600B7A56B /* UpcomingRidesCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -175,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3BE0921235FAC3200005FBE /* Assets.xcassets in Resources */,
+				66593BBD237225D300B7A56B /* San-Francisco-Pro-Fonts-master in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +246,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3BE091A235FAC2C00005FBE /* AppDelegate.swift in Sources */,
+				66593BC2237A656000B7A56B /* upcomingRidesObject.swift in Sources */,
 				66AAC9B223713A15000A36B0 /* HomeViewController.swift in Sources */,
+				66593BC02372367600B7A56B /* UpcomingRidesCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +382,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				PODS_PODFILE_DIR_PATH = "${SRCROOT}/";
 				PRODUCT_BUNDLE_IDENTIFIER = "bethmieczkowski.carriage-user-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -380,6 +401,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				PODS_PODFILE_DIR_PATH = "${SRCROOT}/";
 				PRODUCT_BUNDLE_IDENTIFIER = "bethmieczkowski.carriage-user-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
