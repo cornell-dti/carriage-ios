@@ -49,6 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    //GOOGLE SIGN-IN FUNCTIONS
+    
     @available(iOS 9.0, *)
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
         return GIDSignIn.sharedInstance().handle(url)
@@ -69,16 +71,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             }
             return
         }
-        // Perform any operations on signed in user here.
+        //TODO: Values below will be used in the sign-up page to create a profile
         let userId = user.userID                  // For client-side use only!
         let idToken = user.authentication.idToken // Safe to send to the server
         let fullName = user.profile.name
         let email = user.profile.email
     }
     
+    //TODO: Function below will be used to log out of the app
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
               withError error: Error!) {
-        // TODO: Perform any operations when the user disconnects from app here.
+        
     }
 
 
