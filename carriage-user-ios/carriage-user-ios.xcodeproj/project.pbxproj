@@ -15,6 +15,7 @@
 		D3EF558423721AA1002EDAC2 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D3EF558323721AA1002EDAC2 /* SF-Pro-Display-Semibold.otf */; };
 		D3EF558623721B97002EDAC2 /* FontsFree-Net-SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3EF558523721B97002EDAC2 /* FontsFree-Net-SFProText-Regular.ttf */; };
 		D3EF558823723918002EDAC2 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF558723723918002EDAC2 /* ProfileModel.swift */; };
+    
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		D3EF558323721AA1002EDAC2 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../San-Francisco-Pro-Fonts-master/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		D3EF558523721B97002EDAC2 /* FontsFree-Net-SFProText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FontsFree-Net-SFProText-Regular.ttf"; path = "../../../Downloads/FontsFree-Net-SFProText-Regular.ttf"; sourceTree = "<group>"; };
 		D3EF558723723918002EDAC2 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+
 		FB0A8F20DA6BFD87957A049A /* Pods-carriage-user-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carriage-user-ios.release.xcconfig"; path = "Target Support Files/Pods-carriage-user-ios/Pods-carriage-user-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
