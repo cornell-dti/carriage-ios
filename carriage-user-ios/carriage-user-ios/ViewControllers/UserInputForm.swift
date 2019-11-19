@@ -54,7 +54,7 @@ class UserInputForm: UIViewController {
     
     var newUser: ProfileModel!
     
-    //COLORS
+    // COLORS
     let backgroundGray: UIColor = UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
     let lightTextGray: UIColor = UIColor(red: 0.2902, green: 0.2902, blue: 0.2902, alpha: 1.0)
     let verifiedGreen: UIColor = UIColor(red: 0.29804, green: 0.68627, blue: 0.31372, alpha: 1.0)
