@@ -54,7 +54,10 @@ class UserInputForm: UIViewController {
     
     var newUser: ProfileModel!
     
+    //COLORS
     let backgroundGray: UIColor = UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
+    let lightTextGray: UIColor = UIColor(red: 0.2902, green: 0.2902, blue: 0.2902, alpha: 1.0)
+    let verifiedGreen: UIColor = UIColor(red: 0.29804, green: 0.68627, blue: 0.31372, alpha: 1.0)
     
     override func viewDidLoad() {
         
@@ -165,7 +168,7 @@ class UserInputForm: UIViewController {
         emailLabel = UILabel()
         emailLabel.translatesAutoresizingMaskIntoConstraints = false
         emailLabel.text = "yk568@cornell.edu" //TODO: make phone from user
-        emailLabel.textColor = UIColor(red: 0.2902, green: 0.2902, blue: 0.2902, alpha: 1.0)
+        emailLabel.textColor = lightTextGray
         emailLabel.font = UIFont(name: "SFProText-Regular", size: 16)
         self.view.addSubview(emailLabel)
         
@@ -183,7 +186,7 @@ class UserInputForm: UIViewController {
         emailVerifiedLabel = UILabel()
         emailVerifiedLabel.translatesAutoresizingMaskIntoConstraints = false
         emailVerifiedLabel.text = "verified" //TODO: make only appear if verified
-        emailVerifiedLabel.textColor = UIColor(red: 0.29804, green: 0.68627, blue: 0.31372, alpha: 1.0)
+        emailVerifiedLabel.textColor = verifiedGreen
         emailVerifiedLabel.font = UIFont(name: "SFProText-Regular", size: 14)
         self.view.addSubview(emailVerifiedLabel)
         
@@ -195,7 +198,7 @@ class UserInputForm: UIViewController {
         phoneLabel = UILabel()
         phoneLabel.translatesAutoresizingMaskIntoConstraints = false
         phoneLabel.text = "+1 657-500-1311" //TODO: make phone from user
-        phoneLabel.textColor = UIColor(red: 0.2902, green: 0.2902, blue: 0.2902, alpha: 1.0)
+        phoneLabel.textColor = lightTextGray
         phoneLabel.font = UIFont(name: "SFProText-Regular", size: 16)
         self.view.addSubview(phoneLabel)
         
@@ -213,7 +216,7 @@ class UserInputForm: UIViewController {
         phoneVerifiedLabel = UILabel()
         phoneVerifiedLabel.translatesAutoresizingMaskIntoConstraints = false
         phoneVerifiedLabel.text = "verified" //TODO: make only appear if verified
-        phoneVerifiedLabel.textColor = UIColor(red: 0.29804, green: 0.68627, blue: 0.31372, alpha: 1.0)
+        phoneVerifiedLabel.textColor = verifiedGreen
         phoneVerifiedLabel.font = UIFont(name: "SFProText-Regular", size: 14)
         self.view.addSubview(phoneVerifiedLabel)
     }
@@ -230,7 +233,7 @@ class UserInputForm: UIViewController {
         pronounsLabel = UILabel()
         pronounsLabel.translatesAutoresizingMaskIntoConstraints = false
         pronounsLabel.text = "He/Him/His" //TODO: make pronouns from user
-        pronounsLabel.textColor = UIColor(red: 0.2902, green: 0.2902, blue: 0.2902, alpha: 1.0)
+        pronounsLabel.textColor = lightTextGray
         pronounsLabel.font = UIFont(name: "SFProText-Regular", size: 16)
         self.view.addSubview(pronounsLabel)
         
@@ -248,7 +251,7 @@ class UserInputForm: UIViewController {
         accessLabel = UILabel()
         accessLabel.translatesAutoresizingMaskIntoConstraints = false
         accessLabel.text = "Accessibility"
-        accessLabel.textColor = UIColor(red: 0.2902, green: 0.2902, blue: 0.2902, alpha: 1.0)
+        accessLabel.textColor = lightTextGray
         accessLabel.font = UIFont(name: "SFProText-Regular", size: 16)
         self.view.addSubview(accessLabel)
         
