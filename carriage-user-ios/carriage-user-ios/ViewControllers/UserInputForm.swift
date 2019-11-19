@@ -70,6 +70,7 @@ class UserInputForm: UIViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< Schedule", style: .done, target: self, action: #selector(returnToSchedule))
         self.view.backgroundColor = backgroundGray
         
+        // TODO: make it so that the profile page cannot be shown until logged in or signed up
         newUser = AppDelegate().googleUser
     
         createBackground()
