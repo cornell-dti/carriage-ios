@@ -11,7 +11,7 @@ import GoogleSignIn
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
-
+    var googleUser: ProfileModel!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -72,17 +72,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             }
             return
         }
-        //TODO: Values below will be used in the sign-up page to create a profile
-        let userId = user.userID                  // For client-side use only!
-        let idToken = user.authentication.idToken // Safe to send to the server
+        
+        let userId = user.userID                  // For client-side use only! **BACKEND**
+        let idToken = user.authentication.idToken // Safe to send to the server **BACKEND**
         let fullName = user.profile.name
         let email = user.profile.email
+        
+        googleUser = ProfileModel(userName: fullName ?? "User Name", email: email ?? "@cornell.edu")
+        
     }
     
-    //TODO: Function below will be used to log out of the app
+    // Signs user out
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
               withError error: Error!) {
-        
+        GIDSignIn.sharedInstance().signOut()
     }
 
 

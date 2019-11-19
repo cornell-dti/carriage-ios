@@ -57,6 +57,7 @@ class UserInputForm: UIViewController {
     let backgroundGray: UIColor = UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
@@ -68,6 +69,8 @@ class UserInputForm: UIViewController {
         self.navigationController?.navigationBar.barTintColor =  backgroundGray
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< Schedule", style: .done, target: self, action: #selector(returnToSchedule))
         self.view.backgroundColor = backgroundGray
+        
+        newUser = AppDelegate().googleUser
     
         createBackground()
         createProfileSection()
