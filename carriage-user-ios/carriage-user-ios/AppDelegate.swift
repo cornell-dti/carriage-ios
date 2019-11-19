@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().delegate = self
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: UserInputForm())
+        window?.rootViewController = UINavigationController(rootViewController: SettingsVC())
         
         window?.makeKeyAndVisible()
         return true

@@ -126,7 +126,7 @@ class UserInputForm: UIViewController {
         
         changeProfileImageButton = UIButton()
         changeProfileImageButton.translatesAutoresizingMaskIntoConstraints = false
-        changeProfileImageButton.backgroundColor = .black
+        changeProfileImageButton.backgroundColor = .white
         changeProfileImageButton.layer.cornerRadius = 20
         changeProfileImageButton.setImage(UIImage(named: "pencil"), for: .normal) //TODO: fix this image
         changeProfileImageButton.imageView?.contentMode = .scaleToFill
