@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D0AEB05FED0B137CFB05682A /* Pods_carriage_user_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBE6D09562AB00958A47C07 /* Pods_carriage_user_ios.framework */; };
+		D323AC912382145C00592A8C /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D323AC902382145C00592A8C /* SettingsVC.swift */; };
 		D3B5364E2368E72B001B76E4 /* UserInputForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B5364D2368E72B001B76E4 /* UserInputForm.swift */; };
 		D3BE091A235FAC2C00005FBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BE0919235FAC2C00005FBE /* AppDelegate.swift */; };
 		D3BE0921235FAC3200005FBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BE0920235FAC3200005FBE /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		8DBE6D09562AB00958A47C07 /* Pods_carriage_user_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carriage_user_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48E090E84D945DD30A9AC65 /* Pods-carriage-user-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carriage-user-ios.debug.xcconfig"; path = "Target Support Files/Pods-carriage-user-ios/Pods-carriage-user-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		D323AC902382145C00592A8C /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		D3B5364D2368E72B001B76E4 /* UserInputForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputForm.swift; sourceTree = "<group>"; };
 		D3BE0916235FAC2C00005FBE /* carriage-user-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "carriage-user-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BE0919235FAC2C00005FBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				D3B5364D2368E72B001B76E4 /* UserInputForm.swift */,
+				D323AC902382145C00592A8C /* SettingsVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3EF558823723918002EDAC2 /* ProfileModel.swift in Sources */,
+				D323AC912382145C00592A8C /* SettingsVC.swift in Sources */,
 				D3BE091A235FAC2C00005FBE /* AppDelegate.swift in Sources */,
 				D3B5364E2368E72B001B76E4 /* UserInputForm.swift in Sources */,
 			);
