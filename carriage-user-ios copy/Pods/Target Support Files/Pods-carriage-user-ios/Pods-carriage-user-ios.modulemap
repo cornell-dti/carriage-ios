@@ -1,6 +1,0 @@
-framework module Pods_carriage_user_ios {
-  umbrella header "Pods-carriage-user-ios-umbrella.h"
-
-  export *
-  module * { export * }
-}
