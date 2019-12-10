@@ -52,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     //GOOGLE SIGN-IN FUNCTIONS
     
+    //NOTE: iOS 9 has security regulations that do not allow http. Must change the URL to https before pushing to production. Must remove localhost:3000 from Info.plist exception domains.
     @available(iOS 9.0, *)
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
         return GIDSignIn.sharedInstance().handle(url)
@@ -64,6 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
               withError error: Error!) {
+        
         if let error = error {
             if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
                 print("The user has not signed in before or they have since signed out.")
@@ -72,14 +74,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             }
             return
         }
-        
-        let userId = user.userID                  // For client-side use only! **BACKEND**
-        let idToken = user.authentication.idToken // Safe to send to the server **BACKEND**
+    
+        let idToken = user.authentication.idToken //Safe to send to the server
         let fullName = user.profile.name
         let email = user.profile.email
         
         googleUser = ProfileModel(userName: fullName ?? "User Name", email: email ?? "@cornell.edu")
         
+        //POST
+        let signinEndpoint: URL = URL(string: "http://localhost:3000")!
+        let params: NSDictionary = ["idToken": idToken ?? ""]
+        let session = URLSession.shared
+        
+        var request:URLRequest = URLRequest(url: signinEndpoint)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])
+        
+        let task = session.dataTask(with: request, completionHandler: {data, response, error -> Void in
+            print("Response: \(String(describing: response))")})
+        
+        task.resume()
     }
     
     // Signs user out
