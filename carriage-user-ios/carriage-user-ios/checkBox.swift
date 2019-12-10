@@ -2,8 +2,6 @@
 //  checkBox.swift
 //  carriage-user-ios
 //
-//  Created by Kinjal Jasani on 12/10/19.
-//  Copyright © 2019 Beth Mieczkowski. All rights reserved.
 //
 
 import Foundation
