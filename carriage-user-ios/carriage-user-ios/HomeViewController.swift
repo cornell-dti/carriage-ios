@@ -2,8 +2,7 @@
 //  HomeViewController.swift
 //  carriage-user-ios
 //
-//  Created by Kinjal Jasani on 11/5/19.
-//  Copyright © 2019 Beth Mieczkowski. All rights reserved.
+// 
 //
 
 import UIKit
@@ -11,7 +10,37 @@ import SnapKit
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource {
     var settingsShowing = false
+    let greetingLabel = UILabel()
+    let nextRideLabel = UILabel()
+    let etaLabel = UILabel()
+    let nextRideView = UIView()
+    let fromLabel = UILabel()
+    let fromLocation = UILabel()
+    let moreButton = UIButton()
+    let requestRideButton = UIButton()
+    let rideHistoryLabel = UILabel()
+    let requestRideButtonBackgroundView = UIView()
+    let upcomingRidesLabel = UILabel()
+    let driverPhone = UILabel()
+    let driverName = UILabel()
+    var driverPic = UIImageView()
+    var statusArrow = UIImageView()
+    let toLabel = UILabel()
+    let toLocation = UILabel()
     
+    @objc func transitionToRequestRide(){
+        let requestRideViewController: RequestRideViewController = RequestRideViewController()
+        self.scrollView.removeFromSuperview()
+        self.navigationController?.navigationBar.barTintColor = .black
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.isTranslucent = false
+        let backButton = UIBarButtonItem()
+        backButton.title = "Schedule"
+        backButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+        navigationController?.viewControllers[0].navigationItem.backBarButtonItem = backButton
+        self.navigationController?.pushViewController(requestRideViewController, animated: true)
+    }
     let settingsLauncher = SettingsLauncher()
     @objc func showSettings(){
         if (settingsShowing == false){
@@ -89,18 +118,20 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
 
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        setUpScrollView()
+        setUpLayout()
+        getUpcomingRides()
+        getRideHistory()
+        upcomingRidesTable.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = UIView(frame: UIScreen.main.bounds)
         self.view.backgroundColor = .white
-        self.view.addSubview(scrollView)
-        scrollView.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(self.view.snp.top).offset(120)
-            make.left.equalTo(self.view.snp.left)
-            make.width.equalTo(self.view.frame.width)
-            make.height.equalTo(self.view.frame.height-100)
-        }
+        self.navigationController?.navigationBar.isHidden = true
+        setUpScrollView()
         setUpLayout()
         getUpcomingRides()
         getRideHistory()
@@ -123,11 +154,16 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         rideHistory.append(latestRide)
         self.rideHistoryTable.reloadData()
     }
-    
+    func setUpScrollView(){
+        self.view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(self.view.snp.top).offset(120)
+            make.left.equalTo(self.view.snp.left)
+            make.width.equalTo(self.view.frame.width)
+            make.height.equalTo(self.view.frame.height-100)
+        }
+    }
     func setUpLayout(){
-        
-        
-        let greetingLabel = UILabel()
         self.view.addSubview(greetingLabel)
         greetingLabel.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(self.view.snp.top).offset(50)
@@ -138,7 +174,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         greetingLabel.font = greetingLabel.font.withSize(34)
         greetingLabel.font = greetingLabel.font.bold()
         
-        let nextRideLabel = UILabel()
         self.view.addSubview(nextRideLabel)
         nextRideLabel.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(self.view.snp.bottom).offset(30)
@@ -150,8 +185,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
        nextRideLabel.font = nextRideLabel.font.bold()
        nextRideLabel.textColor = .darkGray
         
-        let nextRideView = UIView()
-        scrollView.addSubview(nextRideView)
+       
+        self.scrollView.addSubview(nextRideView)
         nextRideView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(scrollView.snp.top)
             make.left.equalTo(scrollView.snp.left).offset(30)
@@ -167,7 +202,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         nextRideView.layer.shadowOffset = CGSize.zero
         nextRideView.layer.shadowColor = UIColor.lightGray.cgColor
         
-        let etaLabel = UILabel()
+        
         nextRideView.addSubview(etaLabel)
         etaLabel.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(nextRideView.snp.top)
@@ -182,7 +217,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         etaLabel.font = UIFont(name: "SFProText-Medium", size:UIFont.labelFontSize)
         etaLabel.font = greetingLabel.font.withSize(12)
         
-        let fromLabel = UILabel()
+        
         nextRideView.addSubview(fromLabel)
         fromLabel.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(etaLabel.snp.bottom).offset(20)
@@ -194,26 +229,27 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         fromLabel.font = UIFont(name: "SFProText-Regular", size:UIFont.labelFontSize)
         fromLabel.font = fromLabel.font.withSize(11)
         
-        let fromLocation = UILabel()
-               nextRideView.addSubview(fromLocation)
-               fromLocation.snp.makeConstraints { (make) -> Void in
-                make.top.equalTo(fromLabel.snp.bottom)
-                make.left.equalTo(fromLabel.snp.left)
-                   }
         fromLocation.text = "Upson Hall"
         fromLocation.font = UIFont(name: "SFProText-Regular", size:UIFont.labelFontSize)
          fromLocation.font = fromLocation.font.withSize(17)
-                
-        let toLocation = UILabel()
+               nextRideView.addSubview(fromLocation)
+               fromLocation.snp.makeConstraints { (make) -> Void in
+                make.top.equalTo(fromLabel.snp.bottom)
+                make.left.equalTo(nextRideView.snp.left).offset(20)
+                make.width.equalTo(fromLocation.intrinsicContentSize.width)
+                   }
+        
+                toLocation.text = "Uris Hall"
+                       toLocation.font = UIFont(name: "SFProText-Regular", size:UIFont.labelFontSize)
+                        toLocation.font = fromLocation.font.withSize(17)
                nextRideView.addSubview(toLocation)
                toLocation.snp.makeConstraints { (make) -> Void in
                 make.right.equalTo(nextRideView.snp.right).offset(-20)
+                make.width.equalTo(toLocation.intrinsicContentSize.width)
                    }
-        toLocation.text = "Uris Hall"
-        toLocation.font = UIFont(name: "SFProText-Regular", size:UIFont.labelFontSize)
-         toLocation.font = fromLocation.font.withSize(17)
+       
         
-        let toLabel = UILabel()
+       
         nextRideView.addSubview(toLabel)
         toLabel.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(etaLabel.snp.bottom).offset(20)
@@ -228,7 +264,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         toLocation.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(toLabel.snp.bottom)
         }
-        var statusArrow = UIImageView()
+        
         statusArrow.image = UIImage(named: "arrow")
         nextRideView.addSubview(statusArrow)
         statusArrow.snp.makeConstraints { (make) -> Void in
@@ -239,7 +275,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
             statusArrow.layer.masksToBounds = true
             
-        var driverPic = UIImageView()
+       
         driverPic.image = UIImage(named: "driver_sample_pic")
         nextRideView.addSubview(driverPic)
         driverPic.snp.makeConstraints { (make) -> Void in
@@ -252,10 +288,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             driverPic.layer.cornerRadius = 20
             driverPic.clipsToBounds = true
             
-            
-            
-            
-            let driverName = UILabel()
              nextRideView.addSubview(driverName)
             driverName.snp.makeConstraints { (make) -> Void in
                 make.top.equalTo(driverPic.snp.top)
@@ -265,7 +297,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             driverName.font = UIFont(name: "SFProText-Regular", size:UIFont.labelFontSize)
             driverName.font = driverName.font.withSize(15)
             
-            let driverPhone = UILabel()
+            
                         nextRideView.addSubview(driverPhone)
                        driverPhone.snp.makeConstraints { (make) -> Void in
                         make.top.equalTo(driverName.snp.bottom)
@@ -276,7 +308,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             driverPhone.font = driverPhone.font.withSize(15)
             driverPhone.textColor = .darkGray
             
-            let upcomingRidesLabel = UILabel()
+            
              scrollView.addSubview(upcomingRidesLabel)
              upcomingRidesLabel.snp.makeConstraints { (make) -> Void in
                 make.top.equalTo(nextRideView.snp.bottom).offset(40)
@@ -299,7 +331,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             make.right.equalTo(self.view.snp.right).offset(-10)
             }
             
-        let moreButton = UIButton()
+       
         self.view.addSubview(moreButton)
         moreButton.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(greetingLabel.snp.top)
@@ -310,7 +342,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         moreButton.setImage(UIImage(named: "menu"), for: .normal)
         moreButton.addTarget(self, action: #selector(showSettings), for: .touchUpInside)
         
-        let requestRideButtonBackgroundView = UIView()
+        
         self.view.addSubview(requestRideButtonBackgroundView)
         requestRideButtonBackgroundView.snp.makeConstraints { (make) -> Void in
             make.bottom.equalTo(self.view.snp.bottom)
@@ -327,7 +359,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         requestRideButtonBackgroundView.layer.shadowOffset = CGSize.zero
         requestRideButtonBackgroundView.layer.shadowColor = UIColor.lightGray.cgColor
         
-        let requestRideButton = UIButton()
+        
         requestRideButtonBackgroundView.addSubview(requestRideButton)
         requestRideButton.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(requestRideButtonBackgroundView.snp.top).offset(20)
@@ -341,8 +373,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         requestRideButton.titleLabel?.font = requestRideButton.titleLabel?.font.bold()
         requestRideButton.backgroundColor = UIColor.black
         requestRideButton.titleLabel?.textColor = UIColor.white
+        requestRideButton.addTarget(self, action: #selector(transitionToRequestRide), for: .touchUpInside)
+        requestRideButton.layer.cornerRadius = 5
         
-        let rideHistoryLabel = UILabel()
+        
          scrollView.addSubview(rideHistoryLabel)
          rideHistoryLabel.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(upcomingRidesTable.snp.bottom).offset(10)

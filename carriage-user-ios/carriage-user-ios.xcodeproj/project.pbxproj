@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		4A291D829021CB4F3EEC429B /* Pods_carriage_user_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD3BDDEA9F644A5887A09E88 /* Pods_carriage_user_ios.framework */; };
 		66296FA7237B6DEA0055E72B /* RideHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66296FA6237B6DEA0055E72B /* RideHistoryCell.swift */; };
+		66584386239713B70056E199 /* RequestRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66584385239713B70056E199 /* RequestRideViewController.swift */; };
 		66593BBD237225D300B7A56B /* San-Francisco-Pro-Fonts-master in Resources */ = {isa = PBXBuildFile; fileRef = 66593BBC237225D300B7A56B /* San-Francisco-Pro-Fonts-master */; };
 		66593BC02372367600B7A56B /* UpcomingRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66593BBF2372367600B7A56B /* UpcomingRidesCell.swift */; };
 		66593BC2237A656000B7A56B /* upcomingRidesObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66593BC1237A656000B7A56B /* upcomingRidesObject.swift */; };
+		665EEC87239F625900CD6175 /* checkBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665EEC86239F625900CD6175 /* checkBox.swift */; };
 		666A71BE2383BBE900ADE930 /* rideHistoryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666A71BD2383BBE900ADE930 /* rideHistoryObject.swift */; };
 		66AAC9B223713A15000A36B0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AAC9B123713A15000A36B0 /* HomeViewController.swift */; };
 		66B9AE75238C91B6001AFB87 /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B9AE74238C91B6001AFB87 /* SettingsLauncher.swift */; };
@@ -22,9 +24,11 @@
 
 /* Begin PBXFileReference section */
 		66296FA6237B6DEA0055E72B /* RideHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RideHistoryCell.swift; path = "carriage-user-ios/RideHistoryCell.swift"; sourceTree = SOURCE_ROOT; };
+		66584385239713B70056E199 /* RequestRideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RequestRideViewController.swift; path = "carriage-user-ios/RequestRideViewController.swift"; sourceTree = SOURCE_ROOT; };
 		66593BBC237225D300B7A56B /* San-Francisco-Pro-Fonts-master */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "San-Francisco-Pro-Fonts-master"; sourceTree = "<group>"; };
 		66593BBF2372367600B7A56B /* UpcomingRidesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UpcomingRidesCell.swift; path = "carriage-user-ios/UpcomingRidesCell.swift"; sourceTree = SOURCE_ROOT; };
 		66593BC1237A656000B7A56B /* upcomingRidesObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = upcomingRidesObject.swift; path = "carriage-user-ios/upcomingRidesObject.swift"; sourceTree = SOURCE_ROOT; };
+		665EEC86239F625900CD6175 /* checkBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = checkBox.swift; path = "carriage-user-ios/checkBox.swift"; sourceTree = SOURCE_ROOT; };
 		666A71BD2383BBE900ADE930 /* rideHistoryObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = rideHistoryObject.swift; path = "carriage-user-ios/rideHistoryObject.swift"; sourceTree = SOURCE_ROOT; };
 		66AAC9B123713A15000A36B0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "carriage-user-ios/HomeViewController.swift"; sourceTree = SOURCE_ROOT; wrapsLines = 0; };
 		66B9AE74238C91B6001AFB87 /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsLauncher.swift; path = "carriage-user-ios/SettingsLauncher.swift"; sourceTree = SOURCE_ROOT; };
@@ -113,6 +117,7 @@
 			children = (
 				66593BC1237A656000B7A56B /* upcomingRidesObject.swift */,
 				666A71BD2383BBE900ADE930 /* rideHistoryObject.swift */,
+				665EEC86239F625900CD6175 /* checkBox.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			children = (
 				66AAC9B123713A15000A36B0 /* HomeViewController.swift */,
 				66B9AE74238C91B6001AFB87 /* SettingsLauncher.swift */,
+				66584385239713B70056E199 /* RequestRideViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -258,8 +264,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3BE091A235FAC2C00005FBE /* AppDelegate.swift in Sources */,
+				66584386239713B70056E199 /* RequestRideViewController.swift in Sources */,
 				666A71BE2383BBE900ADE930 /* rideHistoryObject.swift in Sources */,
 				66B9AE77238C9878001AFB87 /* SettingCell.swift in Sources */,
+				665EEC87239F625900CD6175 /* checkBox.swift in Sources */,
 				66593BC2237A656000B7A56B /* upcomingRidesObject.swift in Sources */,
 				66B9AE75238C91B6001AFB87 /* SettingsLauncher.swift in Sources */,
 				66AAC9B223713A15000A36B0 /* HomeViewController.swift in Sources */,

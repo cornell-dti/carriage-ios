@@ -2,8 +2,6 @@
 //  AppDelegate.swift
 //  carriage-user-ios
 //
-//  Created by Beth Mieczkowski on 10/22/19.
-//  Copyright © 2019 Beth Mieczkowski. All rights reserved.
 //
 
 import UIKit
@@ -18,8 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
          window = UIWindow(frame: UIScreen.main.bounds)
         let mainViewController = HomeViewController()
+        var nav = UINavigationController()
+        nav.viewControllers = [mainViewController]
+        nav.navigationBar.isHidden = true
         mainViewController.view.backgroundColor = UIColor.white
-        window!.rootViewController = mainViewController
+        window!.rootViewController = nav
         window!.makeKeyAndVisible()
         return true
     }

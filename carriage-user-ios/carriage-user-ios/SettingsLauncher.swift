@@ -2,8 +2,7 @@
 //  SettingsLauncher.swift
 //  carriage-user-ios
 //
-//  Created by Kinjal Jasani on 11/25/19.
-//  Copyright © 2019 Beth Mieczkowski. All rights reserved.
+//  
 //
 
 import UIKit
