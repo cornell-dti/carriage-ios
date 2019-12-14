@@ -10,17 +10,13 @@ import UIKit
 class ProfileModel {
     
     var userName: String
-//    var dateJoined: NSDate
     var email: String
-//    var phoneNum: String
-//    var pronouns: String
+    var photoURL: URL
     
-    init(userName: String, email: String) {
+    init(userName: String, email: String, photoURL: URL) {
         self.userName = userName
-//        self.dateJoined = dateJoined
         self.email = email
-//        self.phoneNum = phoneNum
-//        self.pronouns = pronouns
+        self.photoURL = photoURL
     }
     
 }

@@ -78,8 +78,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let idToken = user.authentication.idToken //Safe to send to the server
         let fullName = user.profile.name
         let email = user.profile.email
+        let photo: URL = user.profile.imageURL(withDimension: 100)
         
-        googleUser = ProfileModel(userName: fullName ?? "User Name", email: email ?? "@cornell.edu")
+        googleUser = ProfileModel(userName: fullName ?? "User Name", email: email ?? "@cornell.edu", photoURL: photo)
         
         //POST
         let signinEndpoint: URL = URL(string: "http://localhost:3000")!

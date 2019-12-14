@@ -132,9 +132,17 @@ class UserInputForm: UIViewController {
         
         profileImage = UIImageView()
         profileImage.translatesAutoresizingMaskIntoConstraints = false
-        profileImage.image = UIImage(named: "stockphoto")
         profileImage.layer.cornerRadius = 50
-        profileImage.contentMode = .scaleAspectFit
+        profileImage.contentMode = .scaleToFill
+        
+        let url = user.photoURL
+        if let data = try? Data(contentsOf: url) {
+            let image: UIImage = UIImage(data: data)!
+            profileImage.image = image
+        } else {
+            profileImage.image = UIImage(named: "stockphoto")
+        }
+        
         self.view.addSubview(profileImage)
         
         changeProfileImageButton = UIButton()
@@ -165,7 +173,7 @@ class UserInputForm: UIViewController {
         
         emailLabel = UILabel()
         emailLabel.translatesAutoresizingMaskIntoConstraints = false
-        emailLabel.text = "yk568@cornell.edu" //TODO: make phone from user
+        emailLabel.text = user.email
         emailLabel.textColor = lightTextGray
         emailLabel.font = UIFont(name: "SFProText-Regular", size: 16)
         self.view.addSubview(emailLabel)
@@ -302,13 +310,6 @@ class UserInputForm: UIViewController {
             make.top.equalTo(91)
         }
         
-        nameLabel.snp.makeConstraints { (make) -> Void in
-            make.centerX.equalTo(self.view)
-            make.top.equalTo(whiteBox1).offset(51)
-            make.height.equalTo(26)
-            make.width.equalTo(102)
-        }
-        
         joinedLabel.snp.makeConstraints { (make) -> Void in
             make.centerX.equalTo(self.view)
             make.top.equalTo(nameLabel).offset(30)
@@ -321,6 +322,13 @@ class UserInputForm: UIViewController {
             make.top.equalTo(whiteBox1).offset(24)
             make.height.equalTo(100)
             make.width.equalTo(100)
+        }
+        
+        nameLabel.snp.makeConstraints { (make) -> Void in
+            make.leading.equalTo(joinedLabel)
+            make.top.equalTo(whiteBox1).offset(51)
+            make.height.equalTo(26)
+            make.trailing.equalTo(self.view)
         }
         
         changeProfileImageButton.snp.makeConstraints { (make) -> Void in
