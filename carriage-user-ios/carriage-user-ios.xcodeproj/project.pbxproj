@@ -11,6 +11,7 @@
 		D3B5364E2368E72B001B76E4 /* UserInputForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B5364D2368E72B001B76E4 /* UserInputForm.swift */; };
 		D3BE091A235FAC2C00005FBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BE0919235FAC2C00005FBE /* AppDelegate.swift */; };
 		D3BE0921235FAC3200005FBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3BE0920235FAC3200005FBE /* Assets.xcassets */; };
+		D3BF07BC23A47DDC00A415AC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF07BB23A47DDC00A415AC /* LoginVC.swift */; };
 		D3EF558223720DB6002EDAC2 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D3EF558123720DB6002EDAC2 /* SF-Pro-Display-Bold.otf */; };
 		D3EF558423721AA1002EDAC2 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D3EF558323721AA1002EDAC2 /* SF-Pro-Display-Semibold.otf */; };
 		D3EF558623721B97002EDAC2 /* FontsFree-Net-SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3EF558523721B97002EDAC2 /* FontsFree-Net-SFProText-Regular.ttf */; };
@@ -25,6 +26,7 @@
 		D3BE0919235FAC2C00005FBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3BE0920235FAC3200005FBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3BE0925235FAC3200005FBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3BF07BB23A47DDC00A415AC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D3EF558123720DB6002EDAC2 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Bold.otf"; path = "../../San-Francisco-Pro-Fonts-master/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		D3EF558323721AA1002EDAC2 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../San-Francisco-Pro-Fonts-master/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		D3EF558523721B97002EDAC2 /* FontsFree-Net-SFProText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FontsFree-Net-SFProText-Regular.ttf"; path = "../../../Downloads/FontsFree-Net-SFProText-Regular.ttf"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				D3B5364D2368E72B001B76E4 /* UserInputForm.swift */,
+				D3BF07BB23A47DDC00A415AC /* LoginVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			files = (
 				D3EF558823723918002EDAC2 /* ProfileModel.swift in Sources */,
 				D3BE091A235FAC2C00005FBE /* AppDelegate.swift in Sources */,
+				D3BF07BC23A47DDC00A415AC /* LoginVC.swift in Sources */,
 				D3B5364E2368E72B001B76E4 /* UserInputForm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

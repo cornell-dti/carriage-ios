@@ -6,7 +6,6 @@
 
 import UIKit
 import SnapKit
-import GoogleSignIn
 
 class UserInputForm: UIViewController {
     
@@ -50,9 +49,16 @@ class UserInputForm: UIViewController {
     var accessIcon: UIImageView!
     var accessRightChevronButton: UIButton!
     
-    var googleSignInButton: GIDSignInButton!
+    var user: ProfileModel!
     
-    var newUser: ProfileModel!
+    init(user: ProfileModel) {
+        self.user = user
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // COLORS
     let backgroundGray: UIColor = UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
@@ -63,18 +69,10 @@ class UserInputForm: UIViewController {
         
         super.viewDidLoad()
         
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-        
-        // Automatically restore the previous Google user session
-        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
-        
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.barTintColor =  backgroundGray
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< Schedule", style: .done, target: self, action: #selector(returnToSchedule))
         self.view.backgroundColor = backgroundGray
-        
-        // TODO: make it so that the profile page cannot be shown until logged in or signed up
-        newUser = AppDelegate().googleUser
     
         createBackground()
         createProfileSection()
@@ -120,8 +118,8 @@ class UserInputForm: UIViewController {
         
         nameLabel = UILabel()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.text = "Aiden Kim" //TODO: make name from user
         nameLabel.textColor = .black
+        nameLabel.text = user.userName
         nameLabel.font = UIFont(name: "SFProDisplay-Bold", size: 22)
         self.view.addSubview(nameLabel)
         
@@ -265,10 +263,6 @@ class UserInputForm: UIViewController {
         accessRightChevronButton.translatesAutoresizingMaskIntoConstraints = false
         accessRightChevronButton.setImage(UIImage(named: "chevron-right"), for: .normal)
         self.view.addSubview(accessRightChevronButton)
-        
-        googleSignInButton = GIDSignInButton()
-        googleSignInButton.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(googleSignInButton)
     }
     
     func setUpConstraints() {
@@ -460,13 +454,6 @@ class UserInputForm: UIViewController {
             make.top.equalTo(accessLabel)
             make.height.equalTo(25)
             make.width.equalTo(24)
-        }
-        
-        googleSignInButton.snp.makeConstraints { (make) -> Void in
-            make.centerX.equalTo(self.view)
-            make.width.equalTo(100)
-            make.height.equalTo(50)
-            make.top.equalTo(whiteBox4).offset(40)
         }
         
     }

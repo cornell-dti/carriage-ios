@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().hostedDomain = "cornell.edu"
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: UserInputForm())
+        window?.rootViewController = UINavigationController(rootViewController: LoginVC())
         
         window?.makeKeyAndVisible()
         return true
@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             }
             return
         }
-    
+        
         let idToken = user.authentication.idToken //Safe to send to the server
         let fullName = user.profile.name
         let email = user.profile.email
@@ -96,6 +96,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print("Response: \(String(describing: response))")})
         
         task.resume()
+        
+        NotificationCenter.default.post(
+            name: Notification.Name("SuccessfulSignInNotification"), object: googleUser, userInfo: nil)
+        
     }
     
     // Signs user out
@@ -103,7 +107,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
               withError error: Error!) {
         GIDSignIn.sharedInstance().signOut()
     }
-
 
 
 }
